@@ -1,0 +1,151 @@
+.navbar {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  padding: 0 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.logo a:hover {
+  color: var(--primary);
+}
+
+.navbar ul {
+  display: flex;
+  place-items: center;
+  gap: 1.7rem;
+}
+
+.navbar li a {
+  color: var(--text);
+}
+
+.navbar li a:hover {
+  color: var(--primary);
+}
+
+button.primary {
+  padding: 0.6rem 1.2rem;
+  background: var(--primary);
+  color: var(--sub-text);
+}
+
+.menu_btn {
+  display: none;
+  margin: 0 2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 0.4rem;
+}
+
+.menu_btn div {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  position: relative;
+}
+
+.menu_btn span {
+  display: block;
+  position: absolute;
+  width: 80%;
+  height: 3px;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--text);
+  transition: all 0.3s ease;
+}
+
+.menu_btn .line-1 {
+  transform: translate(-50%, -10px);
+}
+
+.menu_btn .line-3 {
+  transform: translate(-50%, 7px);
+}
+
+.menu_btn.active .line-1 {
+  transform: translate(-50%, -2px) rotate(45deg);
+}
+
+.menu_btn.active .line-2 {
+  width: 0;
+}
+
+.menu_btn.active .line-3 {
+  transform: translate(-50%, -2px) rotate(-45deg);
+}
+
+@media screen and (max-width: 700px) {
+  .menu_btn {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+  .navbar li a {
+    color: var(--sub-text);
+  }
+
+  .navbar li a:hover {
+    color: var(--text);
+  }
+  button.primary {
+    display: none;
+  }
+}
+
+/* Drop-Down */
+.drop-down {
+  position: absolute;
+  display: none;
+  top: 60px;
+  right: 2rem;
+  width: 300px;
+  height: 0;
+  background: var(--primary);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.drop-down.open {
+  height: 250px;
+}
+
+.drop-down ul {
+  display: block;
+  margin: 0;
+  padding: 0 0;
+}
+
+.drop-down li {
+  padding: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.drop-down button.primary {
+  display: block;
+  width: 100%;
+  background: var(--background);
+  color: var(--text);
+}
+
+@media screen and (max-width: 700px) {
+  .drop-down {
+    display: block;
+  }
+}
